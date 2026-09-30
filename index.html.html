@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gradia | رفيقك الجامعي</title>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EAF4FC;--card:#fff;--ink:#12324D;--mute:#5B7890;--line:#D3E6F5;--p:#4AA8E8;--pd:#1D6FB0;--soft:#D6EBFA;--ok:#1E9A6B;--warn:#D98A1F;--bad:#D04A4A;--btn:#1D6FB0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1C2A;--card:#142A3D;--ink:#E4F1FB;--mute:#8FB0C8;--line:#22405A;--soft:#1B3A55;--p:#5DB6F0;--pd:#8CCBF5;--btn:#2B7FC0}}
+:root[data-theme="dark"]{--bg:#0D1C2A;--card:#142A3D;--ink:#E4F1FB;--mute:#8FB0C8;--line:#22405A;--soft:#1B3A55;--p:#5DB6F0;--pd:#8CCBF5;--btn:#2B7FC0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Readex Pro',Tahoma,Arial,sans-serif;line-height:1.7}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.app{display:flex;min-height:100vh}
+aside{width:230px;background:var(--card);border-inline-end:1px solid var(--line);padding:22px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:6px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:22px;padding:0 8px 18px;color:var(--pd)}
+.nav{display:flex;align-items:center;gap:10px;padding:11px 14px;border:0;background:none;border-radius:12px;cursor:pointer;text-align:start;width:100%;color:var(--mute)}
+.nav.on{background:var(--soft);color:var(--pd);font-weight:500}
+main{flex:1;max-width:860px;padding:26px 22px 40px;margin:0 auto;width:100%}
+h1{font-size:26px;margin:0 0 4px;font-weight:600}h2{font-size:18px;margin:0 0 12px;font-weight:600}
+.sub{color:var(--mute);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.big{font-size:34px;font-weight:600;color:var(--pd);line-height:1.2}
+.bar{height:12px;background:var(--soft);border-radius:8px;overflow:hidden;margin:10px 0 6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--pd));border-radius:8px;transition:width .5s}
+.cta{background:linear-gradient(135deg,#4AA8E8,#1D6FB0);color:#fff;border:0;border-radius:18px;padding:22px;width:100%;text-align:start;cursor:pointer;margin-bottom:16px;display:block}
+.cta b{font-size:20px;display:block}
+.btn{background:var(--btn);color:#fff;border:0;border-radius:12px;padding:10px 18px;cursor:pointer;font-weight:500}
+
+.btn.ghost{background:var(--soft);color:var(--pd)}
+.btn.sm{padding:6px 12px;font-size:14px}
+select,input{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px;width:100%}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row>*{flex:1;min-width:90px}.row>.fix{flex:none;min-width:0}
+label.f{display:block;font-size:14px;color:var(--mute);margin:12px 0 4px}
+.chk{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer}
+.chk input{width:20px;height:20px;flex:none;accent-color:var(--pd)}
+.chk span:last-child{margin-inline-start:auto;color:var(--mute);font-size:14px}
+.pill{display:inline-block;padding:3px 12px;border-radius:20px;font-size:14px;background:var(--soft);color:var(--pd)}
+.pill.ok{background:#1E9A6B22;color:var(--ok)}.pill.warn{background:#D98A1F22;color:var(--warn)}.pill.bad{background:#D04A4A22;color:var(--bad)}
+.stars{color:#E9A92B;letter-spacing:1px}
+.mini{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line);font-size:15px}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.hero .card{max-width:440px;width:100%;padding:28px}
+.hero .brand{justify-content:center;font-size:30px;padding-bottom:6px}
+.tabs{display:none}.mh{display:none}
+@media (max-width:760px){
+aside{display:none}.mh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}main{padding-bottom:100px}.grid{grid-template-columns:1fr}
+.tabs{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+.tabs button{flex:1;border:0;background:none;padding:6px 2px;font-size:12px;color:var(--mute);display:flex;flex-direction:column;align-items:center;cursor:pointer;gap:0}
+.tabs button span{font-size:20px;line-height:1.3}.tabs button.on{color:var(--pd);font-weight:600}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const LOGO=(s)=>`<svg width="${s}" height="${s}" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="14" fill="#4AA8E8"/><path d="M24 11 7 19l17 8 17-8z" fill="#fff"/><path d="M14 25v7c0 3 4.5 6 10 6s10-3 10-6v-7l-10 4.7z" fill="#D6EBFA"/><path d="M41 19v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>`;
+const UNIS=["جامعة الأمير سطام بن عبدالعزيز","جامعة الملك سعود","جامعة الملك عبدالعزيز","جامعة الملك فهد للبترول والمعادن","جامعة الإمام محمد بن سعود الإسلامية","جامعة الإمام عبدالرحمن بن فيصل","جامعة القصيم","جامعة طيبة","جامعة الملك خالد","جامعة أم القرى","جامعة الأميرة نورة","جامعة جازان","جامعة حائل","جامعة تبوك","جامعة الجوف","جامعة الحدود الشمالية","جامعة الباحة","جامعة نجران","جامعة الطائف","جامعة شقراء","جامعة المجمعة","جامعة الملك فيصل","جامعة جدة","جامعة الفيصل","جامعة الأمير سلطان","جامعة عفت","جامعة دار العلوم","جامعة اليمامة","جامعة أخرى"];
+const MAJORS=["علوم الحاسب","نظم المعلومات","هندسة البرمجيات","الذكاء الاصطناعي","الأمن السيبراني","الهندسة الكهربائية","الهندسة المدنية","الهندسة الصناعية","الطب البشري","طب الأسنان","الصيدلة","التمريض","إدارة الأعمال","المحاسبة","التسويق","القانون","اللغة الإنجليزية","الرياضيات","الفيزياء","الكيمياء","الأحياء","التربية","أخرى"];
+const G5={"A+":5,"A":4.75,"B+":4.5,"B":4,"C+":3.5,"C":3,"D+":2.5,"D":2,"F":1},G4={"A+":4,"A":3.75,"B+":3.5,"B":3,"C+":2.5,"C":2,"D+":1.5,"D":1,"F":0};
+const DOCS=[{n:"د. أحمد خالد",c:"Database",s:4.7,e:4.6,a:4.5,x:4.2,r:86},{n:"د. نورة العتيبي",c:"Operating Systems",s:4.5,e:4.4,a:4.3,x:4.0,r:61},{n:"د. سلمان الحربي",c:"Software Engineering",s:4.3,e:4.2,a:4.4,x:4.1,r:47}];
+const S={tab:"home",user:null,total:132,done:0,est:true,gpa:"",courses:[],planning:false,scale:5,rows:[],prevH:"",prevG:"",abs:[],limit:25};
+try{const u=localStorage.getItem("gradia_user");if(u){S.user=JSON.parse(u);S.done=(S.user.lvl-1)*16}const d=localStorage.getItem("gradia_data");if(d)Object.assign(S,JSON.parse(d))}catch(e){}
+const KEYS=["total","done","est","courses","scale","rows","prevH","prevG","abs","limit"];
+function save(){try{const o={};KEYS.forEach(k=>o[k]=S[k]);localStorage.setItem("gradia_data",JSON.stringify(o))}catch(e){}}
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const opts=(a,sel)=>a.map(x=>`<option${x===sel?" selected":""}>${esc(x)}</option>`).join("");
+const stars=v=>`<span class="stars">${"★".repeat(Math.round(v))}${"☆".repeat(5-Math.round(v))}</span> ${v}`;
+const scale=()=>S.scale===5?G5:G4;
+function semGpa(){let p=0,h=0;S.rows.forEach(r=>{const hh=+r.h||0;p+=scale()[r.g]*hh;h+=hh});return{p,h,g:h?p/h:0}}
+function cumGpa(){const s=semGpa(),ph=+S.prevH||0,pg=+S.prevG||0;const h=ph+s.h;return h?(ph*pg+s.p)/h:0}
+function pct(){return Math.min(100,Math.round(S.done/S.total*100))}
+function absInfo(r){const p=r.t?r.a/r.t*100:0;const st=p>=S.limit?["bad","تجاوزت الحد المسموح"]:p>=S.limit*0.7?["warn","اقتربت من الحد المسموح"]:["ok","ضمن النسبة المسموحة"];return{p:p.toFixed(1),c:st[0],t:st[1]}}
+const TABS=[["home","🏠","الرئيسية"],["plan","📚","خطتي"],["docs","👨‍🏫","الدكاترة"],["tools","🧮","أدواتي"]];
+function go(t){S.tab=t;render();window.scrollTo(0,0)}
+function goPlan(){S.tab="plan";render();const e=$("pl");if(e)e.scrollIntoView({behavior:"smooth"})}
+function start(){const u={uni:$("u").value,major:$("m").value,lvl:+$("l").value};S.user=u;S.done=(u.lvl-1)*16;S.est=true;try{localStorage.setItem("gradia_user",JSON.stringify(u))}catch(e){}render()}
+function reset(){S.user=null;try{localStorage.removeItem("gradia_user")}catch(e){}render()}
+function onboard(){return `<div class="hero"><div class="card"><div class="brand">${LOGO(44)}Gradia</div><p class="sub" style="text-align:center">رفيقك في رحلتك الجامعية: خطط ترمك واحسب معدلك وتابع غيابك.</p>
+<label class="f" for="u">اختر جامعتك</label><select id="u">${opts(UNIS)}</select>
+<label class="f" for="m">اختر تخصصك</label><select id="m">${opts(MAJORS)}</select>
+<label class="f" for="l">مستواك الحالي</label><select id="l">${[1,2,3,4,5,6,7,8,9,10].map(i=>`<option value="${i}"${i===4?" selected":""}>المستوى ${i}</option>`).join("")}</select>
+<button class="btn" style="width:100%;margin-top:20px;padding:13px" onclick="start()">ابدأ رحلتي</button></div></div>`}
+function home(){const u=S.user,s=semGpa();
+const a=S.abs.length?S.abs.map(absInfo).sort((x,y)=>y.p-x.p)[0]:null;
+const st=[[!S.est,"حدّث ساعاتك المنجزة","plan"],[S.courses.length>0,"أضف مواد ترمك القادم","plan"],[S.rows.length>0,"احسب معدلك الفصلي","tools"]];
+return `<h1>مرحبًا بك في Gradia 👋</h1><p class="sub">${esc(u.major)} — ${esc(u.uni)} • المستوى ${u.lvl}</p>
+<div class="grid"><div class="card"><h2>تقدمك الدراسي</h2><div class="big">${S.done} / ${S.total}</div><div class="bar"><i style="width:${pct()}%"></i></div><span class="note">ساعة معتمدة • ${pct()}%${S.est?" • تقدير حسب مستواك، عدّله من خطتي":""}</span></div>
+<div class="card"><h2>معدلك</h2><div class="big">${cumGpa()?cumGpa().toFixed(2):"—"} / ${S.scale}</div><span class="note">احسبه من قسم أدواتي</span></div></div>
+<button class="cta" onclick="goPlan()"><b>🗓️ خطط ترمك القادم</b>اختر موادك وشاهد مجموع ساعاتك<br><span class="pill" style="margin-top:10px;background:#ffffff33;color:#fff">ابدأ التخطيط</span></button>
+${st.every(x=>x[0])?"":`<div class="card"><h2>ابدأ من هنا</h2>${st.map(x=>`<button class="chk" style="width:100%;background:none;text-align:start;font-size:inherit" onclick="go('${x[2]}')"><span>${x[0]?"✅":"⬜"}</span><span style="color:var(--ink)">${x[1]}</span></button>`).join("")}</div>`}
+<div class="card"><div class="mini" style="border:0"><span>المعدل الفصلي</span><b>${s.h?s.g.toFixed(2):"—"}</b></div><div class="mini"><span>الغياب</span><b>${a?a.p+"%":"—"}</b></div></div>`}
+function plan(){const hrs=S.courses.filter(c=>c.on).reduce((a,c)=>a+c.h,0);
+const list=S.courses.map((c,i)=>`<label class="chk"><input type="checkbox" ${c.on?"checked":""} onchange="S.courses[${i}].on=this.checked;render()"><span>${esc(c.n)}</span><span>${c.h} ساعات</span></label>`).join("");
+return `<h1>خطتي الدراسية</h1><p class="sub">عدّل أرقامك وخطط لترمك القادم.</p>
+<div class="card"><div class="big">${pct()}%</div><div class="bar"><i style="width:${pct()}%"></i></div>
+<div class="row" style="margin-top:12px"><div><label class="f">ساعاتك المنجزة</label><input type="number" min="0" value="${S.done}" onchange="S.done=+this.value||0;S.est=false;render()"></div><div><label class="f">إجمالي ساعات الخطة</label><input type="number" min="1" value="${S.total}" onchange="S.total=+this.value||1;render()"></div></div>
+<p class="note">المتبقي: ${Math.max(0,S.total-S.done)} ساعة. عدد ساعات الخطة يختلف حسب التخصص والجامعة، فعدّل الرقمين حسب خطتك الرسمية.${S.est?" (ساعاتك المنجزة تقدير حسب مستواك)":""}</p></div>
+<div class="card" id="pl"><h2>خطط للترم القادم</h2><div class="row" style="margin-bottom:12px"><span class="pill">الساعات المختارة: ${hrs}</span></div>${list||'<p class="note">ما أضفت مواد بعد. اكتب اسم المادة وساعاتها تحت، ثم علّم على المواد اللي بتدرسها الترم القادم.</p>'}
+<p class="note">هذه الخطة تحتوي على ${hrs} ساعات. المتطلبات السابقة والتعارضات ستُضاف لاحقًا.</p>
+<div class="row" style="margin-top:14px"><input id="cn" placeholder="اسم المادة"><input id="ch" aria-label="الساعات" type="number" min="1" max="6" value="3" class="fix" style="width:80px"><button class="btn ghost fix" onclick="addC()">إضافة مادة</button></div></div>`}
+function addC(){const n=$("cn").value.trim();if(!n)return;S.courses.push({n,h:+$("ch").value||3,on:true});render()}
+function docs(){return `<h1>تقييم الدكاترة</h1><p class="sub">تجارب طلاب سابقين تساعدك تختار شعبتك.</p>`+DOCS.map(d=>`<div class="card"><div class="row"><div><h2 style="margin:0">${d.n} <span class="pill warn">مثال</span></h2><span class="note">${d.c}</span></div><div class="fix big" style="font-size:24px">${d.s} <small style="font-size:14px;color:var(--mute)">/ 5</small></div></div>
+<div class="mini"><span>الشرح</span>${stars(d.e)}</div><div class="mini"><span>التقييمات</span>${stars(d.a)}</div><div class="mini"><span>الاختبارات</span>${stars(d.x)}</div><span class="note">${d.r} تقييم</span></div>`).join("")+`<p class="note">هذه بيانات تجريبية. التقييمات آراء وتجارب طلاب وليست حكمًا رسميًا على الدكتور.</p>`}
+function tools(){const s=semGpa(),c=cumGpa(),g=Object.keys(scale());
+const rows=S.rows.map((r,i)=>`<div class="row" style="margin-bottom:8px"><input value="${esc(r.n)}" placeholder="المادة" onchange="S.rows[${i}].n=this.value"><select class="fix" aria-label="الدرجة" style="width:84px" onchange="S.rows[${i}].g=this.value;render()">${opts(g,r.g)}</select><input class="fix" aria-label="الساعات" style="width:70px" type="number" min="1" max="6" value="${r.h}" onchange="S.rows[${i}].h=+this.value;render()"><button class="btn ghost sm fix" aria-label="حذف" onclick="S.rows.splice(${i},1);render()">✕</button></div>`).join("");
+const ab=S.abs.map((r,i)=>{const x=absInfo(r);return `<div style="border-top:1px solid var(--line);padding:12px 0"><div class="row"><input placeholder="اسم المادة" value="${esc(r.n)}" onchange="S.abs[${i}].n=this.value"><button class="btn ghost sm fix" aria-label="حذف" onclick="S.abs.splice(${i},1);render()">✕</button></div>
+<div class="row" style="margin-top:8px"><div><label class="f">مرات الغياب</label><input type="number" min="0" value="${r.a}" onchange="S.abs[${i}].a=+this.value;render()"></div><div><label class="f">عدد المحاضرات الكلي</label><input type="number" min="1" value="${r.t}" onchange="S.abs[${i}].t=+this.value||1;render()"></div></div>
+<p style="margin:10px 0 0">الغياب: ${r.a} / ${r.t} • النسبة: ${x.p}% <span class="pill ${x.c}">${x.t}</span></p></div>`}).join("");
+return `<h1>أدواتي</h1><p class="sub">احسب معدلك وتابع غيابك.</p>
+<div class="card"><h2>حاسبة المعدل الفصلي</h2><div class="row" style="margin-bottom:12px"><span class="note fix">نظام المعدل:</span><select class="fix" aria-label="نظام المعدل" style="width:120px" onchange="S.scale=+this.value;render()"><option value="5"${S.scale===5?" selected":""}>من 5</option><option value="4"${S.scale===4?" selected":""}>من 4</option></select></div>${rows||'<p class="note">ما أضفت مواد بعد. اضغط "إضافة مادة" ثم اكتب اسمها ودرجتها وساعاتها.</p>'}
+<button class="btn ghost sm" onclick="S.rows.push({n:'',g:'A',h:3});render()">+ إضافة مادة</button>
+<p style="margin:16px 0 0">المعدل الفصلي: <span class="big" style="font-size:26px">${s.h?s.g.toFixed(2):"—"}</span> / ${S.scale} <span class="note">(${s.h} ساعة)</span></p></div>
+<div class="card"><h2>حاسبة المعدل التراكمي</h2><p class="note" style="margin:-6px 0 6px">تُحسب مع مواد الفصل المدخلة في الحاسبة أعلاه.</p><div class="row"><div><label class="f">ساعاتك السابقة</label><input type="number" min="0" value="${S.prevH}" placeholder="مثال: 48" onchange="S.prevH=this.value;render()"></div><div><label class="f">معدلك التراكمي السابق</label><input type="number" step="0.01" min="0" max="${S.scale}" value="${S.prevG}" placeholder="مثال: 4.10" onchange="S.prevG=this.value;render()"></div></div>
+<p style="margin:16px 0 0">معدلك التراكمي بعد هذا الفصل: <span class="big" style="font-size:26px">${c?c.toFixed(2):"—"}</span> / ${S.scale}</p><p class="note">أنظمة الجامعات تختلف قليلًا، فراجع لائحة جامعتك.</p></div>
+<div class="card"><h2>متابعة الغياب</h2><div class="row"><span class="note fix">الحد المسموح للغياب:</span><select class="fix" aria-label="الحد المسموح للغياب" style="width:90px" onchange="S.limit=+this.value;render()">${[15,20,25].map(v=>`<option value="${v}"${v===S.limit?" selected":""}>${v}%</option>`).join("")}</select></div>${ab||'<p class="note" style="margin-top:12px">ما أضفت مواد بعد. أضف مادة وسجّل غيابك ومجموع محاضراتها لتعرف وضعك.</p>'}<button class="btn ghost sm" style="margin-top:8px" onclick="S.abs.push({n:'',a:0,t:30});render()">+ إضافة مادة</button></div>`}
+function a11y(){document.querySelectorAll("label.f").forEach((l,i)=>{const x=l.nextElementSibling;if(x&&/INPUT|SELECT/.test(x.tagName)){x.id=x.id||"f"+i;l.htmlFor=x.id}})}
+function render(){const r=$("root");if(!S.user){r.innerHTML=onboard();return}
+const nav=TABS.map(t=>`<button class="nav${S.tab===t[0]?" on":""}" onclick="go('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join("");
+const tabs=TABS.map(t=>`<button class="${S.tab===t[0]?"on":""}" onclick="go('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join("");
+const v={home,plan,docs,tools}[S.tab]();
+r.innerHTML=`<div class="app"><aside><div class="brand">${LOGO(36)}Gradia</div>${nav}<button class="nav" style="margin-top:auto;font-size:14px" onclick="reset()">تغيير الجامعة</button></aside><main><div class="mh"><div class="brand" style="padding:0">${LOGO(32)}Gradia</div><button class="btn ghost sm" onclick="reset()">تغيير الجامعة</button></div>${v}</main></div><nav class="tabs" aria-label="التنقل">${tabs}</nav>`;save();a11y()}
+render();
+</script>
+</body>
+</html>
